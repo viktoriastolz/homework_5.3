@@ -1,23 +1,21 @@
 "use strict";
 
-// Основна програма
-const userInput = prompt("Введіть ціле число N:");
+const userInput = prompt("Enter an integer N:");
 
 if (userInput === null) {
-    alert("Помилка: Значення не може бути null.");
+    alert("Error: Value cannot be null.");
 } else {
     const trimmedInput = userInput.trim();
 
     if (trimmedInput === "") {
-        alert("Помилка: Порожній ввід.");
+        alert("Error: Input is empty.");
     } else if (!/^\d+$/.test(trimmedInput)) {
-        alert("Помилка: Введене значення має бути цілим числом.");
+        alert("Error: The input must be an integer.");
     } else {
         const N = parseInt(trimmedInput, 10);
 
-        alert("Коректне введення! Обчислюємо...");
+        alert("Valid input! Calculating...");
 
-        // Вивести всі числа від 1 до 100, квадрат яких не перевищує N
         const results = [];
 
         let i = 1;
@@ -25,13 +23,12 @@ if (userInput === null) {
             if (i * i <= N) {
                 results.push(i);
             } else {
-                break; // Завершити цикл, якщо квадрат числа перевищує N
+                break; 
             }
             i++;
         }
 
-        alert(`Числа від 1 до 100, квадрат яких не перевищує ${N}: \n${results.join(", ")}`);
+        alert(`Numbers from 1 to 100 whose squares do not exceed ${N}: \n${results.join(", ")}`);
     }
 }
-
 
