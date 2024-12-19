@@ -1,23 +1,18 @@
-"use strict";
+ "use strict";
 
-let input = prompt("Enter an integer N:");
+let input = prompt("Enter an integer:")?.trim(); 
 
-if (!input?.trim() || isNaN(input) || !Number.isInteger(Number(input))) {
+if (!input || isNaN(input) || !Number.isInteger(Number(input))) {
   alert("Error: Please enter a valid integer!");
 } else {
-  const N = Number(input);
-  if (N < 1) {
+  const maxValue = Number(input); 
+  if (maxValue < 1) {
     alert("Error: The number must be greater than or equal to 1!");
   } else {
     let result = "";
-    for (let i = 1; i <= 100; i++) {
-      if (i * i <= N) {
-        result += i + " ";
-      } else {
-        break;
-      }
+    for (let i = 1; i <= Math.floor(Math.sqrt(maxValue)); i++) { 
+      result += i + " ";
     }
-    alert("Numbers whose squares do not exceed " + N + ": " + result.trim());
+    alert("Numbers whose squares do not exceed " + maxValue + ": " + result.trim());
   }
 }
-
