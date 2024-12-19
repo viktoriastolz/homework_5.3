@@ -2,7 +2,7 @@
 
 let input = prompt("Enter an integer N:");
 
-if (!input?.trim() || isNaN(input.trim()) || !Number.isInteger(Number(input.trim()))) {
+if (!input?.trim() || isNaN(input) || !Number.isInteger(Number(input))) {
   alert("Error: Please enter a valid integer!");
 } else {
   const N = Number(input);
